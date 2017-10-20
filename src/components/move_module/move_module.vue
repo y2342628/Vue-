@@ -15,7 +15,7 @@
 		<!--每块的内容 -->
 		<div class ="content">
 			<el-row :gutter="10">
-		  <el-col :span="8" v-for='item in list'>
+		  <el-col :span="8" v-for='(item ,index) in list' :key='index'>
 		  	<router-link v-bind="{to:'/moveinfo/'+item.id}">
 		  		<div class="grid-content bg-purple">
 		  		<img :src="item.images.large">

@@ -5,6 +5,7 @@
           <i class="el-icon-search"></i>
         <input  
         type="search"
+        class="f14"
         @keydown.enter="searchQ"
          placeholder="搜索 电影/影人"
          v-model="value">
@@ -20,7 +21,7 @@
                 <span class="red">大家都在搜</span>
             </div>
             <div >
-               <el-tag class="tag" type="danger" v-for='item in hotlist'>
+               <el-tag class="tag" type="danger" v-for='(item,index) in hotlist' :key='index'>
                     <router-link class="red" v-bind="{to:'/search/searchlist/q='+item.title}">
                    {{item.title}}
                     </router-link>
@@ -33,7 +34,7 @@
                 <span class="red">分类</span>
             </div>
             <div >
-               <el-tag class="tag" type="danger" v-for='item in taglist'>
+               <el-tag class="tag" type="danger" v-for='(item,index) in taglist' :key='index'>
                    <router-link class="red" v-bind="{to:'/search/searchlist/tag='+item}">
                        {{item}}
                    </router-link>
@@ -46,7 +47,7 @@
                 <span class="red">搜索历史</span>
                 <i style="float: right;" class="el-icon-delete red"  @click="open2"></i>
             </div>
-             <div v-for="item in historylist"  class="text item hisli">
+             <div v-for="(item,index) in historylist" :key='index' class="text item hisli">
               <span>{{item}}</span>
               <i class="el-icon-close red del" @click='removehistory(item)'></i>
             </div>
@@ -170,5 +171,8 @@ export default {
     float: right;
     height: 35px;
     line-height: 35px;
+}
+.f14{
+    font-size: 14px;
 }
 </style>

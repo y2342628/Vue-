@@ -5,7 +5,9 @@
 	<el-row :gutter="20">
 	  <el-col :span="4">
 	  	<div class="grid-content bg-purple">
-	  		<img src="../static/images/logo.png">
+	  	<router-link to='/'>
+					<img src="../static/images/logo.png">
+			</router-link>
 	  	</div>
 	  </el-col>
 	  <el-col :span="16">

@@ -63,7 +63,6 @@
 		},
 		created(){
             this.searchvalue= this.$route.params.searchvalue.split('=');
-            console.log(this.searchvalue)
             if(this.searchvalue[0]=='q'){
                 this.qvalue=this.searchvalue[1]
             }
